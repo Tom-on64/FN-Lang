@@ -1,0 +1,13 @@
+(* Function Lang Syntax *)
+(* Whitespace is ignored *)
+(* TODO: Macros *)
+
+program = (import|declaration)*;
+import = '@' IDENT;
+body = (function|functionCall|functionIdent);
+declaration = '[' IDENT ']' body;
+function = IDENT ':' body;
+functionCall = (body|IDENT) '(' body ')';
+functionIdent = IDENT;
+
+IDENT = [A-Za-z0-9_]*; (* string *)

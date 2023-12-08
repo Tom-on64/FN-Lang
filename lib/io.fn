@@ -1,0 +1,14 @@
+? /----------------/
+? std@io
+?
+? FN Standard Library
+? Input/Output package
+? 
+? Written 8/12 2023 by Tom-on
+? Tom-on (c) All rights reserved
+? /----------------/
+
+@_core
+[_pkg]name: io :name(io)
+
+? Package code

@@ -1,0 +1,3 @@
+@natural
+[increment]n: add(n)(1)
+[main]_: increment(3)
