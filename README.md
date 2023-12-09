@@ -49,6 +49,12 @@ Example:
 ### The main function
 This is the only function required for the code to run. 
 It is the first thing to be called when the program runs.
+It has an argument that will always be zero when called.
+
+```FN
+@io ? This imports a package. It'll be explained further down. The package @io contains the function [log] any: <naitive code>
+[main] x: log(x) ? This should log '0' to the console
+```
 
 ### Packages
 While functions might be cool, maybe you don't want to have to write some code yourself.
@@ -109,6 +115,7 @@ function thingInJs(arg) {
  - [mul]k:l: | Takes in two integers and returns their product
 
 ### @io
+ - [log]any:   | Logs any to the console
  - [logBool]b: | Logs a boolean to the console
  - [logPair]p: | Logs a pair to the console
  - [logNat]n:  | Logs a natural number to the console
