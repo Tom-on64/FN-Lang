@@ -24,9 +24,9 @@ What would a functional programming language be without functions?
 
 Functions are defined like this:
 ```FN
-{arg}: {body}
+{arg}: {return}
 
-? Example: Set the value of test to a function
+? Example: Set the value of test to a function that accepts an argument x and returns it back
 [test] x: x
 ```
 
