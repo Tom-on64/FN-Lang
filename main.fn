@@ -1,3 +1,3 @@
-@natural
-[increment]n: add(n)(1)
-[main]_: increment(3)
+? @natural
+[increment]n: n(n)
+[main]_: increment(_)

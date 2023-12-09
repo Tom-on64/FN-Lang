@@ -1,5 +1,5 @@
 import { INodeBody, INodeDeclaration, INodeProgram } from "./Parser.ts";
-import { getPackage } from "./stdlib.ts";
+import { getPackage } from "./stdlib.js";
 
 export class Generator {
     output: string;
