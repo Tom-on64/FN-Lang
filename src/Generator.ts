@@ -22,8 +22,9 @@ export class Generator {
     }
     
     genDecl(decl: INodeDeclaration) {
-        this.output += `const _${decl.indentifier} = `;
+        this.output += `${decl.over ? '' : 'let '}_${decl.indentifier} = `;
         this.genBody(decl.body);
+        this.output += '\n';
     }
 
     genProgram(program: INodeProgram) {
@@ -31,15 +32,11 @@ export class Generator {
             if (s.type === "declaration") this.genDecl(s);
             else if (s.type === "import") this.output += getPackage(s.value);
             else if (s.type === "raw") this.output += s.code;
-            this.output += "\n";
         })
     }
 
     generate(ast: INodeProgram) {
         this.genProgram(ast);
-
-        this.output += "\n_main(0);"
-
         return this.output;
     }
 }

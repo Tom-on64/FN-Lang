@@ -1,5 +1,8 @@
 {
   "tasks": {
-    "dev": "deno run --watch src/main.ts"
+    "dev": "deno run --watch src/main.ts",
+    "test": "deno run --allow-read --allow-write ./src/main.ts main.fn ",  
+    "buildLib": "deno run --allow-read --allow-write ./lib/buildLib.js", 
+    "build": "deno task buildLib; deno compile --output ./build/fn ./src/main.ts"
   }
 }

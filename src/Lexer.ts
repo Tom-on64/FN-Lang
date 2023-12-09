@@ -11,6 +11,7 @@ export enum TokenType {
     PARENCLOSE = ")", 
     COLON = ":",
     AT = "@", 
+    EXCL = "!", 
     RAW = "[raw code]",  
     NULL = "NULL"
 }
@@ -48,6 +49,7 @@ export class Lexer {
             else if (this.current() === ")") tokens.push({ type: TokenType.PARENCLOSE, value: this.consume() });
             else if (this.current() === ":") tokens.push({ type: TokenType.COLON, value: this.consume() });
             else if (this.current() === "@") tokens.push({ type: TokenType.AT, value: this.consume() });
+            else if (this.current() === "!") tokens.push({ type: TokenType.EXCL, value: this.consume() });
             else console.error(`Error: Unexpected character '${this.consume()}'! Ignoring.`);
         }
 

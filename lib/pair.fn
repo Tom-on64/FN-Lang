@@ -1,0 +1,10 @@
+? /----------------/
+? std@pair
+? Ordered pair package
+?
+? Written 9/12/2023 by Tom-on
+? /----------------/
+
+[pair] a:b: p: p(a)(b)
+[first] p: p(a:b:a)
+[last]  p: p(a:b:b)

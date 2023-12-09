@@ -1,0 +1,14 @@
+? /----------------/
+? std@bool
+? Boolean package
+?
+? Written 9/12/2023 by Tom-on
+? /----------------/
+
+[true] a:b: a
+[false] a:b: b 
+
+[and] p:q: p(q)(false)
+[or] p:q: p(true)(q)
+[not] p: p(false)(true)
+[xor] p:q: p(not(q))(q)

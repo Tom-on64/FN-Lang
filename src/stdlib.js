@@ -1,9 +1,13 @@
-export const getPackage = (id) => {
-    const lib = stdlib[id];
-    if (!lib) return null;
-    return lib;
-};
+import stdlib from "./stdlib.json" assert { type: "json" };
 
-const stdlib = {
-    "natural": ""
-}
+export const getPackage = (id) => {
+    let lib = stdlib[id];
+    if (lib) return lib;
+    try {
+        lib = Deno.readTextFileSync(`${id}.fn`);
+        return lib;
+    } catch (err) {
+        console.error(`Error: file ${id}.fn not found`);
+        Deno.exit(1);
+    }
+};

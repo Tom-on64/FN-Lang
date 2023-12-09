@@ -1,14 +1,7 @@
-[0] f:x: x
-[suc] n: f:x: f(n(f)(x))
-[1] suc(0)
-[2] suc(1)
-[3] suc(2)
-[4] suc(3)
-[5] suc(4)
+@bool
+?@pair
+?@natural
+?@int
+@io
 
-[add] m:n: f:x: m(f)(n(f)(x))
-[mul] m:n: f: m(n(f))
-
-%const _logNum = (_n) => console.log(_n(_x=>_x+1)(0));%
-
-[main]_: logNum(mul(3)(4))
+[main]x: logBool(true)

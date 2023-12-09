@@ -34,14 +34,19 @@ export class Parser {
     }
 
     parseDeclaration(): INodeDeclaration {
+        let over = false;
         this.tryConsume(TokenType.SQOPEN);
         const ident = this.tryConsume(TokenType.IDENTIFIER);
         if (!ident.value) return Deno.exit(1);
+        if (this.current().type === TokenType.EXCL) {
+            this.tryConsume(TokenType.EXCL);
+            over = true;
+        }
         this.tryConsume(TokenType.SQCLOSE);
 
         const body = this.parseBody();
 
-        return { indentifier: ident.value, body, type: "declaration" };
+        return { indentifier: ident.value, body, over, type: "declaration" };
     }
 
     parseImport(): INodeImport {
@@ -83,7 +88,7 @@ export class Parser {
     }
 
     private peek(amount = 1): IToken {
-        if (this.index + amount >= this.tokens.length) console.error("Error: Peak out of range!");
+        if (this.index + amount >= this.tokens.length) return { type: TokenType.NULL };
         return this.tokens[this.index+amount];
     }
 }
@@ -117,6 +122,7 @@ export type INodeBody = INodeFunction | INodeFunctionCall | INodeFunctionIdent;
 export interface INodeDeclaration {
     indentifier: string;
     body: INodeBody;
+    over: boolean;
     type: "declaration";
 }
 

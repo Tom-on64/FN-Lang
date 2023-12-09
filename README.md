@@ -17,7 +17,7 @@ Variables can be defined as follows:
 [example] a: b: a(b)
 ```
 The variable name is in square brackets, followed by it's value.
-All variables are immutable.
+All variables are immutable, unless the identifier is followed by '!'.
 
 ### Functions
 What would a functional programming language be without functions?

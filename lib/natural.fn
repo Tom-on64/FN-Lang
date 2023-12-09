@@ -1,17 +1,10 @@
 ? /----------------/
 ? std@natural
-?
-? FN Standard Library
 ? Natural numbers package
-? 
-? Written 8/12 2023 by Tom-on
-? Tom-on (c) All rights reserved
+?
+? Written 9/12/2023 by Tom-on
 ? /----------------/
 
-@_core
-[_pkg]name: natural :name(natural)
-
-? Package code
 [0] f:x: x
 [suc] n: f:x: f(n(f)(x))
 [1] suc(0)
@@ -19,6 +12,10 @@
 [3] suc(2)
 [4] suc(3)
 [5] suc(4)
+[6] suc(5)
+[7] suc(6)
+[8] suc(7)
+[9] suc(8)
 
 [add] m:n: f:x: m(f)(n(f)(x))
 [mul] m:n: f: m(n(f))

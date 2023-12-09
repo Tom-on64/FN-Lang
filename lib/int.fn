@@ -1,0 +1,27 @@
+? /----------------/
+? std@int
+? Integer package
+?
+? Written 9/12/2023 by Tom-on
+? /----------------/
+
+@natural
+@pair
+
+[int] pair
+
+[1!] int(1)(0)
+[2!] int(2)(0) 
+[3!] int(3)(0) 
+[4!] int(4)(0) 
+[5!] int(5)(0) 
+[6!] int(6)(0) 
+[7!] int(7)(0) 
+[8!] int(8)(0) 
+[9!] int(9)(0) 
+[0!] int(0)(0)
+
+[neg] k:   int(last(k))(first(k))
+[add!] k:l: int(add(last(k))(last(l)))(add(first(k))(first(l)))
+[sub] k:l: add(k)(neg(l))
+[mul!] k:l: int(add(mul(first(k))(first(l)))(mul(last(k))(last(l))))(add(mul(last(k))(last(l)))(mul(first(k))(first(l))))

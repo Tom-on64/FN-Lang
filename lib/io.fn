@@ -1,14 +1,13 @@
 ? /----------------/
 ? std@io
-?
-? FN Standard Library
 ? Input/Output package
-? 
-? Written 8/12 2023 by Tom-on
-? Tom-on (c) All rights reserved
+?
+? Written 9/12/2023 by Tom-on
 ? /----------------/
 
-@_core
-[_pkg]name: io :name(io)
-
-? Package code
+%
+const _logBool = b => console.log(b(true)(false));
+const _logPair = p => console.log([p(a=>b=>a), p(a=>b=>b)]);
+const _logNat = n => console.log(n(x=>x+1)(0));
+const _logInt = i => console.log(i(a=>b=>a)(x=>x+1)(0) - i(a=>b=>b)(x=>x+1)(0));
+%
