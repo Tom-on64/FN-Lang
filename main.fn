@@ -1,7 +1,1 @@
-@bool
-?@pair
-?@natural
-?@int
-@io
-
-[main]x: logBool(true)
+[main] x: x

@@ -21,7 +21,7 @@
 [9!] int(9)(0) 
 [0!] int(0)(0)
 
-[neg] k:   int(last(k))(first(k))
+[neg]  k:   int(last(k))(first(k))
 [add!] k:l: int(add(last(k))(last(l)))(add(first(k))(first(l)))
-[sub] k:l: add(k)(neg(l))
+[sub]  k:l: add(k)(neg(l))
 [mul!] k:l: int(add(mul(first(k))(first(l)))(mul(last(k))(last(l))))(add(mul(last(k))(last(l)))(mul(first(k))(first(l))))

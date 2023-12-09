@@ -82,5 +82,34 @@ function thingInJs(arg) {
 ```
 
 ## Standard Library
-### natural
-This package contains definitions for natural numbers and functions that operate with them.
+
+### @bool
+ - [true]    | Represents a True boolean value
+ - [false]   | Represents a False boolean value
+ - [and]p:q: | Takes in two booleans and returns their logical AND
+ - [or] p:q: | Takes in two booleans and returns their logical OR
+ - [not]p:q: | Takes in one boolean and returns it's logical NOT
+ - [xor]p:q: | Takes in two booleans and returns their logical XOR
+
+### @pair
+ - [pair] a:b: | Represents an ordered pair. Takes in two values and returns their pair
+ - [first]p:   | Takes in a pair and returns it's first element
+ - [last] p:   | Takes in a pair and returns it's last element
+
+### @natural
+ - [0-9]     | Represents the first ten natural numbers (including 0)
+ - [add]m:n: | Takes in two natural numbers and returns their sum
+ - [mul]m:n: | Takes in two natural numbers and returns their product
+
+### @int _Warning: This package might not work Idk_
+ - [0-9]     | Represents the first ten positive integers (including 0)
+ - [neg]k:   | Takes in an integer and negates it
+ - [add]k:l: | Takes in two integers and returns their sum
+ - [sub]k:l: | Takes in two integers and returns their difference
+ - [mul]k:l: | Takes in two integers and returns their product
+
+### @io
+ - [logBool]b: | Logs a boolean to the console
+ - [logPair]p: | Logs a pair to the console
+ - [logNat]n:  | Logs a natural number to the console
+ - [logInt]i:  | Logs an integer to the console
