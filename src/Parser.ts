@@ -27,8 +27,9 @@ export class Parser {
         const arg = this.parseBody();
         this.tryConsume(TokenType.PARENCLOSE);
 
-        if (this.current().type === TokenType.PARENOPEN) calledFunc = this.parseBody(calledFunc as INodeFunctionCall);
+        if (this.current().type === TokenType.PARENOPEN) calledFunc = this.parseBody({ func: calledFunc, arg, type: "functionCall" });
 
+        if (!prevCall && typeof(calledFunc) !== "string" && calledFunc.type === "functionCall") return calledFunc;
         return { func: calledFunc, arg, type: "functionCall" };
     }
 

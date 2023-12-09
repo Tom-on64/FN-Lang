@@ -12,4 +12,6 @@ const parser = new Parser(tokens);
 const ast = parser.parseProgram();
 const generator = new Generator();
 const out = generator.generate(ast);
+// console.log(JSON.stringify(ast, null, 2))
+console.log(out);
 run(out);

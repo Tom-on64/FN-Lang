@@ -9,20 +9,20 @@ export class Generator {
 
     genBody(body: INodeBody) {
         if (body.type === "function") {
-            this.output += `${body.argIdent} => `;
+            this.output += `_${body.argIdent} => `;
             this.genBody(body.body);
         } else if (body.type === "functionCall") {
-            if (typeof(body.func) === "string") this.output += `${body.func}`;
+            if (typeof(body.func) === "string") this.output += '_' + body.func;
             else this.genBody(body.func);
             
             this.output += '(';
             this.genBody(body.arg);
             this.output += ')';
-        } else if (body.type === "functionIdent") this.output += body.identifier;
+        } else if (body.type === "functionIdent") this.output += '_' + body.identifier;
     }
     
     genDecl(decl: INodeDeclaration) {
-        this.output += `const ${decl.indentifier} = `;
+        this.output += `const _${decl.indentifier} = `;
         this.genBody(decl.body);
     }
 
@@ -38,7 +38,7 @@ export class Generator {
     generate(ast: INodeProgram) {
         this.genProgram(ast);
 
-        this.output += "\nmain(0);"
+        this.output += "\n_main(0);"
 
         return this.output;
     }
