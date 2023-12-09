@@ -6,6 +6,7 @@
 ? /----------------/
 
 %
+const _log = any => console.log(any);
 const _logBool = b => console.log(b(true)(false));
 const _logPair = p => console.log([p(a=>b=>a), p(a=>b=>b)]);
 const _logNat = n => console.log(n(x=>x+1)(0));

@@ -1,1 +1,2 @@
-[main] x: x
+@io
+[main] x: log(x)
